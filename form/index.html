@@ -1,0 +1,75 @@
+<center>
+    <h1>Xie Xie Boba</h1> 
+    <h1>Depan Rumah wkwk</h1>
+    
+</center>
+<center>
+    <img src="boba.jpg" height="400" width="400">
+</center>
+<link href="D:\UMY MUDA\semester 4\pkw\form\style.css" rel="stylesheet">
+<meta charset="UTF-8">
+<form action="#" class="container">
+    <br>
+    <label for="nama">Nama &emsp;</label>
+    <br><br>
+    <input type="text" name="nama" id="nama" />
+    <br><br>
+    <label for="nomeja">Nomor Meja</label>
+    <br><br>
+    <input type="text" name="nomeja" id="nomeja" />
+    <br><br>
+    <label for="Jenis Pembayaran">jenis Pembayaran </label>
+    <br><br>
+    <input type="radio" name="JenisPembayaran" id="JenisPembayaran" value="Cash"/> Cash
+    <input type="radio" name="JenisPembayaran" id="JenisPembayaran" value="Debit"/> Debit
+    <br><br>
+    <center>
+        <label for="Minuman">Boba Menu</label>
+        <br><br>
+        <input type="checkbox" name="Minuman" id="Minuman" value="Sweet Boba Caramel" size="50"/>Sweet Boba Caramel
+        <input type="checkbox" name="Minuman" id="Minuman" value="Arome Regal brown Sugar" />Arome Regal brown Suga
+        <input type="checkbox" name="Minuman" id="Minuman" value="Sweet Pinky" />Sweet Pinky
+        <input type="checkbox" name="Minuman" id="Minuman" value="Sweet Purple" />Sweet Purple
+        <br><br>
+        <img src="boba1.jpg"alt="Sweet Boba Caramel" height="200" width="200">
+        <img src="boba2.jpg" alt="Arome Regal brown Sugar" height="200" width="200">
+        <img src="boba3.jpg" alt="Sweet Pinky" height="200" width="200">
+        <img src="boba4.jpg" alt="Sweet Purple" height="200" width="200">
+        <br><br>
+        <input type="button" value="Kirim" onclick="tampilData()" />
+        <br><br><br>
+    </center>
+</form>
+
+<script>
+    function tampilData() {
+        var nama = document.getElementById("nama").value;
+        var nomeja = document.getElementById("nomeja").value;
+        var JenisPembayaran = document.querySelector("input[name=JenisPembayaran]:checked").value;
+
+        var Makanan = document.getElementsByName("Minuman");
+        var daftarMinuman = ''
+
+        for(var Minuman2 of Minuman) {
+            if(Minuman2.checked) {
+                daftarMinuman += ', '+Minuman2.value
+            }
+        }
+
+        daftarMinuman = daftarMinuman.substring(1)
+
+        alert(
+            "   Thank you for coming to Xie Xie Boba  " +
+            "\nDon't Forget to Come Back" +
+            "\n\nNama : " +
+            nama +
+            "\nNomor meja : " +
+            nomeja +
+            "\nJenis pembayaran : " +
+            JenisPembayaran +
+            "\nMinuman : " +
+            daftarMinuman +
+            "\n\nENJOY AND SEE YOU"
+        );
+    }
+</script>
